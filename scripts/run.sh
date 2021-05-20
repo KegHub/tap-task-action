@@ -48,7 +48,7 @@ check_envs
 
 export CLI_PATH=$ACTION_WORKSPACE/keg-cli
 export KEG_GLOBAL_CONFIG=$CLI_PATH/.kegConfig/cli.config.json
-export KEG_CLI_USER=keg-admin
+export KEG_CLI_USER=$INPUT_USER
 
 echo "==== Starting Tap Task Action"
 

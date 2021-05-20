@@ -9,7 +9,7 @@ export TAP_ALIAS=$INPUT_TAP_ALIAS
 
 clone_tap () {
   echo "==== Cloning Tap with branch $TAP_BRANCH"
-  git -C $TAPS_DIR clone --single-branch --branch $TAP_BRANCH https://github.com/$INPUT_REPOSITORY
+  git -C $TAPS_DIR clone --single-branch --branch $TAP_BRANCH https://$KEG_CLI_USER:$INPUT_TOKEN@github.com/$INPUT_REPOSITORY
 }
 
 install_tap () {
