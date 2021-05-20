@@ -1,0 +1,27 @@
+name: test
+on:
+  push:
+    branches:
+      - master
+      - develop
+
+jobs:
+  test-build-push:
+    runs-on: ubuntu-latest
+    name: Build tap image test
+    steps:
+    - name: Cancel Previous Workflows In Progress
+      uses: styfle/cancel-workflow-action@0.9.0
+      with:
+        access_token: ${{ github.token }}
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Tap Run Task
+      id: tap-run-task
+      uses: ./
+      with:
+        repository: simpleviewinc/tap-events-force
+        tap_ref: /ref/heads/tap-alias
+        tap_alias: my_tap
+        command: keg $INPUT_TAP_ALIAS path
+        token: ${{ secrets.GIT_TOKEN }}
