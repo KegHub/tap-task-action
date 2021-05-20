@@ -7,12 +7,6 @@ clone_cli () {
   git -C $ACTION_WORKSPACE clone --single-branch --branch $INPUT_CLI_GIT_BRANCH https://github.com/simpleviewinc/keg-cli.git
 }
 
-install_cli () {
-  echo "==== Installing Keg-CLI dependencies..." 
-  cd $CLI_PATH
-  yarn install
-}
-
 setup_cli () {
   echo "==== Configuring CLI..." 
   cd $CLI_PATH
@@ -26,5 +20,4 @@ setup_cli () {
 }
 
 clone_cli
-install_cli
 setup_cli
