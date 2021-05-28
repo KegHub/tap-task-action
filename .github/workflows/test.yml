@@ -26,4 +26,4 @@ jobs:
         token: ${{ secrets.GIT_TOKEN }}
     - name: Test Output
       id: test-output
-      run: echo "Task output: ${{ steps.tap-run-task.outputs.TASK_OUTPUT}}"
+      run: echo "Task output: ${{ steps.tap-run-task.outputs.TASK_OUTPUT }}"
