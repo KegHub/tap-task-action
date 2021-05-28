@@ -21,7 +21,7 @@ jobs:
       uses: ./
       with:
         repository: simpleviewinc/tap-visitapps-app
-        tap_ref: /ref/heads/deploy-task
+        tap_ref: /ref/heads/deploy-workflow
         command: keg vaa path
         token: ${{ secrets.GIT_TOKEN }}
     - name: Test output
