@@ -25,4 +25,4 @@ setup_eas_deps () {
 
 clone_cli
 setup_cli
-setup_other_deps
+setup_eas_deps
