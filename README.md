@@ -6,7 +6,7 @@ For more information on taps and the keg, see [keg-hub](https://github.com/simpl
 # Usage
 
 ```yml
-- uses: simpleviewinc/tap-task-action@0.0.3
+- uses: simpleviewinc/tap-task-action@0.0.5
   with:
     # The keg-cli git branch to use for building and pushing the image.
     #
@@ -54,3 +54,6 @@ For more information on taps and the keg, see [keg-hub](https://github.com/simpl
     # Default: 'keg-admin'
     user: ''
 ```
+
+# Outputs
+* `TASK_OUTPUT`: if your command sent anything to `stdout`, it will be accessible through this output variable
