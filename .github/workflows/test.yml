@@ -24,6 +24,6 @@ jobs:
         tap_ref: /ref/heads/deploy-task
         command: keg vaa path
         token: ${{ secrets.GIT_TOKEN }}
-    - name: Test Output
+    - name: Test output
       id: test-output
-      run: echo "Task output: ${{ steps.tap-run-task.outputs.TASK_OUTPUT }}"
+      run: echo "Task output = ${{ steps.tap-run-task.outputs.TASK_OUTPUT }}"
