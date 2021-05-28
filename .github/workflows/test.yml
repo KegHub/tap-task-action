@@ -20,8 +20,10 @@ jobs:
       id: tap-run-task
       uses: ./
       with:
-        repository: simpleviewinc/tap-events-force
-        tap_ref: /ref/heads/tap-alias
-        tap_alias: my_tap
-        command: keg $INPUT_TAP_ALIAS path
+        repository: simpleviewinc/tap-visitapps-app
+        tap_ref: /ref/heads/deploy-task
+        command: keg vaa path
         token: ${{ secrets.GIT_TOKEN }}
+    - name: Test Output
+      id: test-output
+      run: echo "Task output: ${{ steps.tap-run-task.outputs.TASK_OUTPUT}}"

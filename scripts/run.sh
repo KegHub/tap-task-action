@@ -56,5 +56,9 @@ $ACTION_WORKSPACE/scripts/cli.sh
 $ACTION_WORKSPACE/scripts/tap.sh
 
 echo "==== Running command: $INPUT_COMMAND"
-eval "source $CLI_PATH/keg && $INPUT_COMMAND"
+
+export TASK_OUTPUT=$(eval "source $CLI_PATH/keg && $INPUT_COMMAND")
+
+# set the github action's output value
+echo "::set-output name=TASK_OUTPUT::$TASK_OUTPUT"
 
