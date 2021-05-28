@@ -19,5 +19,10 @@ setup_cli () {
     bash scripts/ci/setupKegEnvironment.sh
 }
 
+setup_eas_deps () {
+  npm install -g eas-cli
+}
+
 clone_cli
 setup_cli
+setup_other_deps
