@@ -18,8 +18,8 @@ check_envs() {
     exit 1
   fi
 
-  if [[ -z $INPUT_TAP_REF ]]; then
-    missing_env "INPUT_TAP_REF"
+  if [[ -z $INPUT_TAP_REF ]] && [[ -z $INPUT_TAP_HEAD_REF ]]; then
+    echo "Error: you must set either INPUT_TAP_REF or INPUT_TAP_HEAD_$EF"
     exit 1
   fi
 

@@ -14,10 +14,16 @@ inputs:
     default: 'develop'
   tap_ref:
     description: >
-      The tap branch to checkout (example: /ref/heads/my-feature-branch). When checking out the repository that
+      For PUSH events, the tap ref to checkout (example: /ref/heads/my-feature-branch). When checking out the repository that
       triggered a workflow, this defaults to the reference or SHA for that
       event. 
     default: ${{ github.ref }}
+  tap_head_ref:
+    description: >
+      For PULL_REQUEST events, the tap branch to checkout (example: /ref/heads/my-feature-branch). When checking out the repository that
+      triggered a workflow, this defaults to the reference or SHA for that
+      event. `tap-task-action` will try to use this before falling back to `tap_ref`
+    default: ${{ github.head_ref }}
   tap_alias:
     description: The link alias for your tap. If omitted, the task will look for an alias in your your tap's config file (e.g tap.js(on))
   repository:
@@ -42,7 +48,8 @@ runs:
   args:
     - ${{ inputs.cli_git_branch }}
     - ${{ inputs.keg_hub_git_branch }}
-    - ${{ inputs.ref }}
+    - ${{ inputs.tap_ref }}
+    - ${{ inputs.tap_head_ref }}
     - ${{ inputs.tap_alias }}
     - ${{ inputs.repository }}
     - ${{ inputs.command }}

@@ -1,8 +1,15 @@
 set -e
 source $ACTION_WORKSPACE/keg-cli/keg
 
+
+# head-ref will only be set during a PR event
+export REF_BRANCH=${INPUT_TAP_REF##*/}
+export HEAD_REF_BRANCH=${INPUT_TAP_HEAD_REF##*/}
+
+# check the PR ref first, then fallback to the ref_branch
+export TAP_BRANCH=${HEAD_REF_BRANCH:-$REF_BRANCH}
+
 export TAPS_DIR=$ACTION_WORKSPACE/keg-hub/taps
-export TAP_BRANCH=${INPUT_TAP_REF##*/}
 export TAP_NAME=$(basename $INPUT_REPOSITORY)
 export TAP_PATH=$TAPS_DIR/$TAP_NAME
 export TAP_ALIAS=$INPUT_TAP_ALIAS

@@ -13,7 +13,7 @@ For more information on taps and the keg, see [keg-hub](https://github.com/simpl
     # Default: 'develop'
     cli_git_branch: ''
 
-    # The git ref of the tap to checkout.
+    # For PUSH events, the git ref of the tap to checkout.
     # When checking out the repository that triggered a workflow, this 
     # defaults to the reference or SHA for that event. 
     # 
@@ -22,6 +22,14 @@ For more information on taps and the keg, see [keg-hub](https://github.com/simpl
     # Example: /ref/heads/my-feature-branch
     # Default: ${{ github.ref }}
     tap_ref: ''
+
+    # For PULL_REQUEST events, the tap branch to checkout (example: /ref/heads/my-feature-branch). When checking out the repository that
+    # triggered a workflow, this defaults to the reference or SHA for that event. `tap-task-action` 
+    # will try to use this before falling back to `tap_ref`
+    # 
+    # Example: my-branch
+    # Default: ${{ github.head_ref }}
+    tap_head_ref:
 
     # Your tap's repository name, including owner. 
     #
