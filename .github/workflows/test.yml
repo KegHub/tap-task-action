@@ -3,7 +3,6 @@ on:
   push:
     branches:
       - master
-      - develop
 
 jobs:
   test-build-push:
@@ -20,9 +19,9 @@ jobs:
       id: tap-run-task
       uses: ./
       with:
-        repository: simpleviewinc/tap-visitapps-app
+        repository: KegHub/keg-herkin
         tap_ref: /ref/heads/deploy-workflow
-        command: keg vaa path
+        command: keg herkin path
         token: ${{ secrets.GIT_TOKEN }}
     - name: Test output
       id: test-output

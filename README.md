@@ -1,12 +1,12 @@
 # Overview: 
-`tap-task-action` is a github action that sets up the [keg-cli](https://github.com/simpleviewinc/keg-cli), a tap, then runs a keg cli task. 
+`tap-task-action` is a github action that sets up the [keg-cli](https://github.com/KegHub/keg-cli), a tap, then runs a keg cli task. 
 
-For more information on taps and the keg, see [keg-hub](https://github.com/simpleviewinc/keg-hub)
+For more information on taps and the keg, see [keg-hub](https://github.com/KegHub/keg-hub)
 
 # Usage
 
 ```yml
-- uses: simpleviewinc/tap-task-action@0.0.6
+- uses: KegHub/tap-task-action@0.0.6
   with:
     # The keg-cli git branch to use for building and pushing the image.
     #
@@ -33,7 +33,7 @@ For more information on taps and the keg, see [keg-hub](https://github.com/simpl
 
     # Your tap's repository name, including owner. 
     #
-    # Example: simpleviewinc/tap-events-force
+    # Example: KegHub/tap-events-force
     # Default: ${{ github.repository }}
     repository: ''
 

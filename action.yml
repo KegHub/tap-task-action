@@ -1,4 +1,4 @@
-name: tap-task-action
+name: KegHub/tap-task-action
 description: 'Sets up the keg-cli and your tap, then runs a task'
 
 branding:
